@@ -23,6 +23,15 @@ namespace CSharpAvancado
                 DownloadFile(urls[i]);
             });
 
+            Parallel.Invoke(() =>
+            {
+                DownloadFile("Chrome.exe");
+            },
+            () =>
+            {
+                DownloadFile("Opera.exe");
+            });
+
             Console.ReadKey();
         }
 
